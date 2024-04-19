@@ -28,63 +28,73 @@ class ArchiveBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: kSecondaryPadding,
-          vertical: kDefaultPadding,
-        ),
-        padding: const EdgeInsets.only(
-            top: kSecondaryPadding, bottom: kSecondaryPadding),
-        height: size.height * 0.76,
-        width: size.width,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Text(
-                "DATA TABLE",
-                style: GoogleFonts.roboto(
-                    color: const Color(0xff101010),
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
-                    shadows: [
-                      Shadow(
-                        offset: const Offset(0, 4),
-                        blurRadius: 4,
-                        color: Colors.black.withOpacity(.15),
-                      )
-                    ]),
+      child:
+      Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: kSecondaryPadding,
+              vertical: kDefaultPadding,
+            ),
+            padding: const EdgeInsets.only(
+                top: kSecondaryPadding, bottom: kSecondaryPadding),
+            height: size.height * 0.76,
+            width: size.width,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                    "DATA TABLE",
+                    style: GoogleFonts.roboto(
+                        color: const Color(0xff101010),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        shadows: [
+                          Shadow(
+                            offset: const Offset(0, 4),
+                            blurRadius: 4,
+                            color: Colors.black.withOpacity(.15),
+                          )
+                        ]),
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 3,
+                    ),
+                    padding: const EdgeInsets.only(
+                        top: kDefaultPadding, bottom: kSecondaryPadding),
+                    width: size.width,
+                    height: 520,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: const Offset(0, 2),
+                            blurRadius: 4,
+                            spreadRadius: 4,
+                            color: Colors.black.withOpacity(.15))
+                      ],
+                    ),
+                    child: const DataBuilder(),
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 16.h,
-              ),
-              Container(
-                margin: const EdgeInsets.only(
-                  top: 3,
-                ),
-                padding: const EdgeInsets.only(
-                    top: kDefaultPadding, bottom: kSecondaryPadding),
-                width: size.width,
-                height: 520,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        offset: const Offset(0, 2),
-                        blurRadius: 4,
-                        spreadRadius: 4,
-                        color: Colors.black.withOpacity(.15))
-                  ],
-                ),
-                child: const DataBuilder(),
-              ),
-            ],
+            ),
           ),
-        ),
+        const Center(child: Column(
+          children: [Text("Palmadom",style: TextStyle(color: Colors.amberAccent),),
+
+          ],
+        ),)
+        ],
       ),
     );
   }
