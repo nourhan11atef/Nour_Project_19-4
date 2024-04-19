@@ -6,6 +6,7 @@ import 'Screens/chart/chart_screen.dart';
 import 'Screens/home/home_screen.dart';
 import 'constants.dart';
 //test
+//test2
 void main() {
   runApp(const MyApp());
 }
